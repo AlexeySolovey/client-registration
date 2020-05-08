@@ -1,0 +1,85 @@
+<!-- link on the lesson https://www.youtube.com/watch?v=qML_nlIEnRQ&list=PLC3y8-rFHvwg2RBz6UplKTGIXREj9dV0G&index=23 -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target="#bs-example-navbar-collapse-1"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">LOGO</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li>
+          <a routerLink="/events"
+            ><span class="glyphicon glyphicon-th" aria-hidden="true"></span>
+            Events</a
+          >
+        </li>
+        <li><a routerLink="/special">Special</a></li>
+        <li>
+          <a
+            href="https://www.youtube.com/watch?v=qML_nlIEnRQ&list=PLC3y8-rFHvwg2RBz6UplKTGIXREj9dV0G&index=23"
+            ><span class="glyphicon glyphicon-volume-down"></span> Lesson</a
+          >
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a routerLink="/login" *ngIf="!authService.loggedIn()">Login</a>
+        </li>
+        <li>
+          <a routerLink="/registration" *ngIf="!authService.loggedIn()"
+            >Registration</a
+          >
+        </li>
+        <li class="dropdown" *ngIf="authService.loggedIn()">
+          <a
+            href="#"
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+            ><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+            Jack Bass<span class="caret"></span
+          ></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="http://www.fgruber.ch/" target="_blank"
+                ><span
+                  class="glyphicon glyphicon-cog"
+                  aria-hidden="true"
+                ></span>
+                User Settings</a
+              >
+            </li>
+            <li>
+              <a (click)="authService.logoutUser()"
+                ><span
+                  class="glyphicon glyphicon-log-out"
+                  aria-hidden="true"
+                ></span>
+                Logout</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

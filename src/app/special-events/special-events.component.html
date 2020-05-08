@@ -1,0 +1,14 @@
+<p>special-events works!</p>
+
+<div class="container">
+  <div class="row profile">
+    <div class="col-sm-4" *ngFor="let special of specials">
+      <div class="profile-content">
+        <p class="id">{{ special._id }}</p>
+        <h4>{{ special.name }}</h4>
+        <p>{{ special.description }}</p>
+        <data>{{ special.data }}</data>
+      </div>
+    </div>
+  </div>
+</div>

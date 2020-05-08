@@ -1,0 +1,14 @@
+<p>events works!</p>
+
+<div class="container">
+  <div class="row profile">
+    <div class="col-sm-4" *ngFor="let event of events">
+      <div class="profile-content">
+        <p class="id">{{ event._id }}</p>
+        <h4>{{ event.name }}</h4>
+        <p>{{ event.description }}</p>
+        <data>{{ event.data }}</data>
+      </div>
+    </div>
+  </div>
+</div>
